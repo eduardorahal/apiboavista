@@ -28,7 +28,8 @@ export function pesquisaCPF(request, response) {
       },
       "body": newbody_impala,
       "method": "POST"
-    }).then((res) => res.json())
+    }).catch((error) => console.log(error))
+      .then((res) => res.json())
       .then((data) => {
         const id = data.history_id;
         const secret = encodeURIComponent(JSON.stringify(data.handle.secret));
@@ -60,7 +61,7 @@ export function pesquisaCPF(request, response) {
           },
           "body": body_session,
           "method": "POST"
-        })
+        }).catch((error) => console.log(error))
           .then((data_1) => data_1.json())
           .then((data_2) => {
               for (let i = 0; i < data_2.result.data.length; i++){
@@ -68,7 +69,7 @@ export function pesquisaCPF(request, response) {
               }
               response.json(resp);
           })
-          .catch((error) => console.log(error));
+          
         
       })
 
