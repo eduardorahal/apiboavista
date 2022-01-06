@@ -9,7 +9,7 @@ app.listen(PORT, () => {
   });
 
 
-app.post("/cpf/:cpf", async (req, res) => {
+app.get("/cpf/:cpf", async (req, res) => {
     const response = await pesquisaCPF(req, res);
 })
 
