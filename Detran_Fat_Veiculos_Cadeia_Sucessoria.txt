@@ -1,8 +1,0 @@
-txt_placa
-txt_uf_origem
-txt_uf_destino
-txt_cpf_cnpj
-txt_nome_proprietario
-dat_aquisicao
-txt_ordenador
-txt_marca_descricao

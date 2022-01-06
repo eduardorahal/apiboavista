@@ -1,0 +1,28 @@
+{
+  "name": "extracao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardorahal/apiboavista.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardorahal/apiboavista/issues"
+  },
+  "homepage": "https://github.com/eduardorahal/apiboavista#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "json": "^11.0.0",
+    "node-fetch": "^3.1.0",
+    "nodemon": "^2.0.15",
+    "res": "^0.4.0",
+    "utf8": "^3.0.0"
+  }
+}
