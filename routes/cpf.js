@@ -68,6 +68,8 @@ export function pesquisaCPF(request, response) {
               }
               response.json(resp);
           })
+          .catch((error) => console.log(error));
+        
       })
 
 };
