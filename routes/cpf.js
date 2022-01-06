@@ -75,6 +75,10 @@ export function pesquisaCPF(request, response) {
 
 };
 
+pesquisaCPF.catch(function () {
+  console.log("Promise Rejected");
+});
+
 
 
 
