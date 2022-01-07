@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import { readFileSync } from 'fs';
+import { timeStamp } from "console";
 
 export function pesquisaCPF(request, response) {
 
@@ -7,7 +8,7 @@ export function pesquisaCPF(request, response) {
     const body_impala = readFileSync("./routes/body_impala_cpf.json");
     const body1_impala = body_impala.toString();
     const newbody_impala = body1_impala.replace(/XXXXXXXXXXX/gi, cpf);
-    let resp = [];
+    let resp = {};
 
     fetch("https://boavista-dados.ciasc.sc.gov.br/notebook/api/execute/impala", {
       "headers": {
@@ -63,12 +64,29 @@ export function pesquisaCPF(request, response) {
         }).then((data_1) => data_1.json())
           .then((data_2) => {
               for (let i = 0; i < data_2.result.data.length; i++){
-                  resp.push(data_2.result.data[i]);
+                var temp = {};
+                resp[i] = {};
+                for (let j = 0; j < data_2.result.data[i].length; j++){
+                  
+                  temp[data_2.result.meta[j].name] = JSON.parse(JSON.stringify(data_2.result.data[i][j]).replace(/&nbsp;/g," "));
+                  
+                  
+                  
+                  // temp.push(JSON.parse(JSON.stringify(data_2.result.data[i][j]).replace(/&nbsp;/g," ")));
+                  // resp[i] = Object.assign({}, temp);
+
+                }
+                resp[i] = temp;
+                
+                // var resp = Object.assign({}, data_2.result.data);
+                
+                // resp.push(data_2.result.data[i]);
               }
+              
               response.json(resp);
-          }).catch((error) => console.log(error))
+          }).catch((error) => console.log(error));
           
         
-      }).catch((error) => console.log(error))
+      }).catch((error) => console.log(error));
 
 };
