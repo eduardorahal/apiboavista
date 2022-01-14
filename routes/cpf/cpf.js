@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import { readFileSync } from 'fs';
-import { timeStamp } from "console";
+
 
 export function pesquisaCPF(request, response) {
 
@@ -21,9 +21,9 @@ export function pesquisaCPF(request, response) {
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "x-csrftoken": "LyC6Q2p0BAFliVdOnqUVE9IiZO64MUUS",
+        "x-csrftoken": "KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv",
         "x-requested-with": "XMLHttpRequest",
-        "cookie": "_ga=GA1.4.546366442.1640611731; _gid=GA1.4.159862798.1640789795; csrftoken=LyC6Q2p0BAFliVdOnqUVE9IiZO64MUUS; sessionid=4gszm549by2p37aoscbmpyhmzbmfgwyd; ROUTEID=.hue-HUE_SERVER-5e2ebd27a47c2409444922b2bb136bb9",
+        "cookie": "_ga=GA1.4.546366442.1640611731; _gid=GA1.4.724433356.1642087103; _gat=1; csrftoken=KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv; sessionid=9vjmnpa21aymg5r75pm1gnqo7l76czj0; ROUTEID=.hue-HUE_SERVER-5e2ebd27a47c2409444922b2bb136bb9",
         "Referer": "https://boavista-dados.ciasc.sc.gov.br/hue/editor?editor=163507&type=impala",
         "Referrer-Policy": "strict-origin-when-cross-origin"
       },
@@ -53,9 +53,9 @@ export function pesquisaCPF(request, response) {
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
-            "x-csrftoken": "LyC6Q2p0BAFliVdOnqUVE9IiZO64MUUS",
+            "x-csrftoken": "KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv",
             "x-requested-with": "XMLHttpRequest",
-            "cookie": "_ga=GA1.4.546366442.1640611731; _gid=GA1.4.159862798.1640789795; csrftoken=LyC6Q2p0BAFliVdOnqUVE9IiZO64MUUS; sessionid=4gszm549by2p37aoscbmpyhmzbmfgwyd; ROUTEID=.hue-HUE_SERVER-5e2ebd27a47c2409444922b2bb136bb9",
+            "cookie": "_ga=GA1.4.546366442.1640611731; _gid=GA1.4.724433356.1642087103; _gat=1; csrftoken=KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv; sessionid=9vjmnpa21aymg5r75pm1gnqo7l76czj0; ROUTEID=.hue-HUE_SERVER-5e2ebd27a47c2409444922b2bb136bb9",
             "Referer": "https://boavista-dados.ciasc.sc.gov.br/hue/editor?editor=163529",
             "Referrer-Policy": "strict-origin-when-cross-origin"
           },
