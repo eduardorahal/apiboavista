@@ -1,0 +1,10 @@
+SELECT distinct
+    A.nom_pessoa_vinculada,
+    A.num_documento_pessoa_vinculada,
+    A.num_cnpj,
+    A.nom_pessoa
+
+FROM jucesc_share.fat_quadro_societario A, jucesc_share.fat_quadro_societario B
+WHERE A.num_documento_pessoa_vinculada <> B.num_documento_pessoa_vinculada
+AND A.num_cnpj = B.num_cnpj
+AND B.num_documento_pessoa_vinculada LIKE "%06348634957"

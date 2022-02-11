@@ -2,13 +2,15 @@ import fetch from "node-fetch";
 import { readFileSync } from 'fs';
 
 
-export function pesquisaCPF(request, response) {
+export function empresasPorCPF(request, response) {
 
     let cpf = request.params.cpf;
-    const body_impala = readFileSync("./routes/body_impala_cpf.json");
+    const body_impala = readFileSync("./routes/empresas/cpf/body_impala.json");
     const body1_impala = body_impala.toString();
     const newbody_impala = body1_impala.replace(/XXXXXXXXXXX/gi, cpf);
     let resp = [];
+    let cookies = readFileSync("./cookies.txt");
+    let token = readFileSync("./token.txt");
 
     fetch("https://boavista-dados.ciasc.sc.gov.br/notebook/api/execute/impala", {
       "headers": {
@@ -21,9 +23,9 @@ export function pesquisaCPF(request, response) {
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "x-csrftoken": "KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv",
+        "x-csrftoken": token,
         "x-requested-with": "XMLHttpRequest",
-        "cookie": "_ga=GA1.4.546366442.1640611731; _gid=GA1.4.724433356.1642087103; _gat=1; csrftoken=KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv; sessionid=9vjmnpa21aymg5r75pm1gnqo7l76czj0; ROUTEID=.hue-HUE_SERVER-5e2ebd27a47c2409444922b2bb136bb9",
+        "cookie": cookies,
         "Referer": "https://boavista-dados.ciasc.sc.gov.br/hue/editor?editor=163507&type=impala",
         "Referrer-Policy": "strict-origin-when-cross-origin"
       },
@@ -35,7 +37,7 @@ export function pesquisaCPF(request, response) {
         const secret = encodeURIComponent(JSON.stringify(data.handle.secret));
         const session_guid = encodeURIComponent(JSON.stringify(data.handle.session_guid));
         
-        const body_fetch = readFileSync("./routes/body_fetch_cpf.json");
+        const body_fetch = readFileSync("./routes/empresas/cpf/body_fetch.json");
         const body1_fetch = body_fetch.toString();
         const newbody_fetch = body1_fetch.replace(/XXXXXXXXXXX/gi, cpf);
         const body_id = newbody_fetch.replace("IDIDID", id);
@@ -53,9 +55,9 @@ export function pesquisaCPF(request, response) {
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
-            "x-csrftoken": "KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv",
+            "x-csrftoken": token,
             "x-requested-with": "XMLHttpRequest",
-            "cookie": "_ga=GA1.4.546366442.1640611731; _gid=GA1.4.724433356.1642087103; _gat=1; csrftoken=KfzbwgIVJ3cjkhS4UHohxfFnstPTjuJv; sessionid=9vjmnpa21aymg5r75pm1gnqo7l76czj0; ROUTEID=.hue-HUE_SERVER-5e2ebd27a47c2409444922b2bb136bb9",
+            "cookie": cookies,
             "Referer": "https://boavista-dados.ciasc.sc.gov.br/hue/editor?editor=163529",
             "Referrer-Policy": "strict-origin-when-cross-origin"
           },
