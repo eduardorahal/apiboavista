@@ -8,6 +8,8 @@ import { empresasPorCPF } from "./routes/empresas/cpf/cpf.js";
 import { empresasPorCNPJ } from "./routes/empresas/cnpj/cnpj.js";
 import { sociosPorCPF } from "./routes/socios/cpf/cpf.js";
 import { sociosPorCNPJ } from "./routes/socios/cnpj/cnpj.js";
+import { detentosPorCPF } from "./routes/detentos/cpf/cpf.js";
+import { visitantesPorCPF } from "./routes/visitantes/cpf/cpf.js";
 
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`)
@@ -38,3 +40,10 @@ app.get("/socios/cnpj/:cnpj", async (req, res) => {
 const response = await sociosPorCNPJ(req, res);
 });
 
+app.get("/detentos/cpf/:cpf", async (req, res) => {
+  const response = await detentosPorCPF(req, res);
+});
+
+app.get("/visitantes/cpf/:cpf", async (req, res) => {
+  const response = await visitantesPorCPF(req, res);
+});

@@ -7,4 +7,4 @@ SELECT distinct
 FROM jucesc_share.fat_quadro_societario A, jucesc_share.fat_quadro_societario B
 WHERE A.num_documento_pessoa_vinculada <> B.num_documento_pessoa_vinculada
 AND A.num_cnpj = B.num_cnpj
-AND B.num_documento_pessoa_vinculada LIKE "%06348634957"
+AND B.num_documento_pessoa_vinculada LIKE "%XXXXXXXXXXX"

@@ -23,4 +23,4 @@ dsc_atividade_economica
 
 from jucesc_share.fat_quadro_societario 
 
-where num_cnpj like "%30768681000101" and cod_principal_secundario = "1"
+where num_cnpj LIKE "%XXXXXXXXXXXXXX" and cod_principal_secundario = "1"

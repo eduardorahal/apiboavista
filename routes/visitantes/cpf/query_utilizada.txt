@@ -1,0 +1,17 @@
+select distinct
+    detentos_unidades_pcsc.nom_detento,
+    detentos_unidades_pcsc.num_cpf,
+    detentos_unidades_pcsc.sta_ativo,
+    fat_visitas_pcsc.nom_visitante,
+    fat_visitas_pcsc.dsc_tipo_visitante,
+    fat_visitas_pcsc.dsc_tipo_visita,
+    fat_visitas_pcsc.dsc_grau_parentesco,
+    fat_visitantes_pcsc.num_cpf,
+    fat_visitantes_pcsc.num_rg,
+    fat_visitantes_pcsc.sgl_estado_rg
+from detentos_unidades_pcsc
+inner join fat_visitas_pcsc
+on detentos_unidades_pcsc.num_base = fat_visitas_pcsc.num_base
+inner join fat_visitantes_pcsc
+on fat_visitas_pcsc.num_base_visitante = fat_visitantes_pcsc.num_base_visitante
+where detentos_unidades_pcsc.num_cpf LIKE "%XXXXXXXXXXX"

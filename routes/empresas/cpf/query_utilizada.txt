@@ -29,4 +29,4 @@ dsc_atividade_economica
 
 from jucesc_share.fat_quadro_societario 
 
-where num_documento_pessoa_vinculada like "%XXXXXXXXXXX" and cod_principal_secundario = "1"
+where num_documento_pessoa_vinculada LIKE "%XXXXXXXXXXX" and cod_principal_secundario = "1"

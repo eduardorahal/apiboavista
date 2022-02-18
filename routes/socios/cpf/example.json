@@ -1,0 +1,50 @@
+[
+    {
+        "nom_pessoa_vinculada": "NERI JOSE NEGRI",
+        "num_documento_pessoa_vinculada": "44662092949",
+        "num_cnpj": "07946264000181",
+        "nom_pessoa": "NEGRI &amp; NEGRI PAINEIS LTDA"
+    },
+    {
+        "nom_pessoa_vinculada": "ANDRE OLIMPIO NEGRI",
+        "num_documento_pessoa_vinculada": "04183987989",
+        "num_cnpj": "79876074000146",
+        "nom_pessoa": "N J NEGRI &amp; FILHOS LTDA"
+    },
+    {
+        "nom_pessoa_vinculada": "HERALDO DIAS",
+        "num_documento_pessoa_vinculada": "06738513976",
+        "num_cnpj": "60274859000110",
+        "nom_pessoa": "LUIS ROBERTO RODRIGUES DE MORAES"
+    },
+    {
+        "nom_pessoa_vinculada": "ANDRE OLIMPIO NEGRI",
+        "num_documento_pessoa_vinculada": "04183987989",
+        "num_cnpj": "07946264000181",
+        "nom_pessoa": "NEGRI &amp; NEGRI PAINEIS LTDA"
+    },
+    {
+        "nom_pessoa_vinculada": "NERI JOSE NEGRI",
+        "num_documento_pessoa_vinculada": "44662092949",
+        "num_cnpj": "79876074000146",
+        "nom_pessoa": "N J NEGRI &amp; FILHOS LTDA"
+    },
+    {
+        "nom_pessoa_vinculada": "LUIS ROBERTO RODRIGUES DE MORAES",
+        "num_documento_pessoa_vinculada": "07346676807",
+        "num_cnpj": "60274859000110",
+        "nom_pessoa": "LUIS ROBERTO RODRIGUES DE MORAES"
+    },
+    {
+        "nom_pessoa_vinculada": "FLAVIA FELTRIN GARCIA",
+        "num_documento_pessoa_vinculada": "06348634957",
+        "num_cnpj": "30768681000101",
+        "nom_pessoa": "SHIFT GROUP ASSESSORIA E CONSULTORIA LTDA"
+    },
+    {
+        "nom_pessoa_vinculada": "CLELIA VANILDA NEGRI",
+        "num_documento_pessoa_vinculada": "90906152968",
+        "num_cnpj": "79876074000146",
+        "nom_pessoa": "N J NEGRI &amp; FILHOS LTDA"
+    }
+]
