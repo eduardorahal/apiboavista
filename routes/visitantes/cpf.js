@@ -2,10 +2,10 @@ import fetch from "node-fetch";
 import { readFileSync } from 'fs';
 
 
-export function veiculosPorCPF(request, response) {
+export function visitantes(request, response) {
 
     let cpf = request.params.cpf;
-    const body_impala = readFileSync("./routes/veiculos/cpf/body_impala.json");
+    const body_impala = readFileSync("./routes/visitantes/body_impala.json");
     const body1_impala = body_impala.toString();
     const newbody_impala = body1_impala.replace(/XXXXXXXXXXX/gi, cpf);
     let resp = [];
@@ -37,7 +37,7 @@ export function veiculosPorCPF(request, response) {
         const secret = encodeURIComponent(JSON.stringify(data.handle.secret));
         const session_guid = encodeURIComponent(JSON.stringify(data.handle.session_guid));
         
-        const body_fetch = readFileSync("./routes/veiculos/cpf/body_fetch.json");
+        const body_fetch = readFileSync("./routes/visitantes/body_fetch.json");
         const body1_fetch = body_fetch.toString();
         const newbody_fetch = body1_fetch.replace(/XXXXXXXXXXX/gi, cpf);
         const body_id = newbody_fetch.replace("IDIDID", id);

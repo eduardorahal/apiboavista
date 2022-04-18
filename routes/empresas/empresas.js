@@ -2,12 +2,12 @@ import fetch from "node-fetch";
 import { readFileSync } from 'fs';
 
 
-export function empresasPorCNPJ(request, response) {
+export function empresas(request, response) {
 
-    let cnpj = request.params.cnpj;
-    const body_impala = readFileSync("./routes/empresas/cnpj/body_impala.json");
+    let cpfcnpj = request.params.cpfcnpj;
+    const body_impala = readFileSync("./routes/empresas/body_impala.json");
     const body1_impala = body_impala.toString();
-    const newbody_impala = body1_impala.replace(/XXXXXXXXXXXXXX/gi, cnpj);
+    const newbody_impala = body1_impala.replace(/XXXXXXXXXXX/gi, cpfcnpj);
     let resp = [];
     let cookies = readFileSync("./cookies.txt");
     let token = readFileSync("./token.txt");
@@ -37,9 +37,9 @@ export function empresasPorCNPJ(request, response) {
         const secret = encodeURIComponent(JSON.stringify(data.handle.secret));
         const session_guid = encodeURIComponent(JSON.stringify(data.handle.session_guid));
         
-        const body_fetch = readFileSync("./routes/empresas/cnpj/body_fetch.json");
+        const body_fetch = readFileSync("./routes/empresas/body_fetch.json");
         const body1_fetch = body_fetch.toString();
-        const newbody_fetch = body1_fetch.replace(/XXXXXXXXXXXXXX/gi, cnpj);
+        const newbody_fetch = body1_fetch.replace(/XXXXXXXXXXX/gi, cpfcnpj);
         const body_id = newbody_fetch.replace("IDIDID", id);
         const body_secret = body_id.replace(/secretsecretsecret/gi, secret);
         const body_session = body_secret.replace("sessionguidsessionguid", session_guid);

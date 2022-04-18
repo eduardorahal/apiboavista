@@ -2,12 +2,12 @@ import fetch from "node-fetch";
 import { readFileSync } from 'fs';
 
 
-export function empresasPorCPF(request, response) {
+export function veiculos(request, response) {
 
-    let cpf = request.params.cpf;
-    const body_impala = readFileSync("./routes/empresas/cpf/body_impala.json");
+    let cpfcnpj = request.params.cpfcnpj;
+    const body_impala = readFileSync("./routes/veiculos/body_impala.json");
     const body1_impala = body_impala.toString();
-    const newbody_impala = body1_impala.replace(/XXXXXXXXXXX/gi, cpf);
+    const newbody_impala = body1_impala.replace(/XXXXXXXXXXX/gi, cpfcnpj);
     let resp = [];
     let cookies = readFileSync("./cookies.txt");
     let token = readFileSync("./token.txt");
@@ -37,9 +37,9 @@ export function empresasPorCPF(request, response) {
         const secret = encodeURIComponent(JSON.stringify(data.handle.secret));
         const session_guid = encodeURIComponent(JSON.stringify(data.handle.session_guid));
         
-        const body_fetch = readFileSync("./routes/empresas/cpf/body_fetch.json");
+        const body_fetch = readFileSync("./routes/veiculos/body_fetch.json");
         const body1_fetch = body_fetch.toString();
-        const newbody_fetch = body1_fetch.replace(/XXXXXXXXXXX/gi, cpf);
+        const newbody_fetch = body1_fetch.replace(/XXXXXXXXXXX/gi, cpfcnpj);
         const body_id = newbody_fetch.replace("IDIDID", id);
         const body_secret = body_id.replace(/secretsecretsecret/gi, secret);
         const body_session = body_secret.replace("sessionguidsessionguid", session_guid);
