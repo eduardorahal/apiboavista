@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import { readFileSync } from 'fs';
-
+import get_login from "../../login.js";
 
 export function empresas(request, response) {
-
+    await get_login;
     let cpfcnpj = request.params.cpfcnpj;
     const body_impala = readFileSync("./routes/empresas/body_impala.json");
     const body1_impala = body_impala.toString();
