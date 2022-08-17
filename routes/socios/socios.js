@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import { readFileSync } from 'fs';
 import get_login from "../../login.js";
 
-export function socios(request, response) {
+export async function socios(request, response) {
     await get_login;
     let cpfcnpj = request.params.cpfcnpj;
     const body_impala = readFileSync("./routes/socios/body_impala.json");

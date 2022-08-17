@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import { readFileSync } from 'fs';
 import get_login from "../../login.js";
 
-export function visitantes(request, response) {
+export async function visitantes(request, response) {
     await get_login;
     let cpf = request.params.cpf;
     const body_impala = readFileSync("./routes/visitantes/body_impala.json");
